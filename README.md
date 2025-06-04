@@ -16,6 +16,7 @@ npm run dev
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+  - [Deployment](#deployment)
 
 ## Overview
 This Project is built using React + Vite Application. It helps users to find & search poems quickly by typing keywords in the search bar. 
@@ -83,6 +84,9 @@ Deploy App in AWS S3 Bucket
 4. Upload all the contents from the `dist` directory to the S3 Bucket
 5. Open the bucket website endpoint - `http://bucket-name.s3-website-region.amazonaws.com/`
 6. To configure a secure HTTPS connection, create a CloudFront distribution, configuring the domain from the S3 bucket, and other settings  
+
+### Deployment
+- AWS Deployment using [deploy.yml](.github/workflows/deploy.yml) 
 
 ## Steps for Fresh Start
 1. Run the following commands for a fresh start of the Project 
