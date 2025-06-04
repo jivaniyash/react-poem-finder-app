@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "./PoemMetaData.css";
 
 const PoemMetaData = ({ poem, onClose }) => {
