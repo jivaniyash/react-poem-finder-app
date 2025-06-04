@@ -1,4 +1,3 @@
-import React from "react";
 import "./LanguageToggle.css";
 
 const LanguageToggle = ({ language, onToggle }) => {

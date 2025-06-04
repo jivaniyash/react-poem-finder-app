@@ -1,4 +1,6 @@
-const highlightMatch = (text, query) => {
+import "./HighlightMatch.css"
+
+const HighlightMatch = (text, query) => {
   if (!query) return text;
 
   const regex = new RegExp(`(${query})`, 'gi');
@@ -11,4 +13,4 @@ const highlightMatch = (text, query) => {
   );
 };
 
-export default highlightMatch;
+export default HighlightMatch;

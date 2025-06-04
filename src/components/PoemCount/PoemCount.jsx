@@ -1,12 +1,11 @@
-import React from "react";
 import "./PoemCount.css"
 
-function PoemCount({totalPoems}) {
+function PoemCount({ totalPoems }) {
   return (
-    <div 
+    <div
       className="poem-count">
       <span>{totalPoems} Poem{totalPoems !== 1 ? "s" : ""}</span>
-      </div>
+    </div>
   );
 }
 

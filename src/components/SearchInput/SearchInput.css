@@ -7,7 +7,6 @@ input[type="text"] {
   margin-bottom: 1rem;
   transition: all 0.3s;
   font-family: 'rasa';
-  
 }
 
 input[type="text"]:focus {

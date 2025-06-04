@@ -20,6 +20,8 @@ npm run dev
 
 ## Overview
 This Project is built using React + Vite Application. It helps users to find & search poems quickly by typing keywords in the search bar. 
+Check Out [Project](https://dgmca1q0tkf1c.cloudfront.net) at CloudFront Link.
+
 ![Demo](demo/demo.gif)
 
 ### Features
@@ -77,13 +79,23 @@ This Project is built using React + Vite Application. It helps users to find & s
     This will start the App @ `http://localhost:4173`
 
 ## Usage
-Deploy App in AWS S3 Bucket
+There are 2 options to deploy the React App - either using S3 website endpoint or by Cloudfront by securing the connection.
+
+### Deploy App in AWS S3 Bucket and access via S3 public link
 1. Create an S3 Bucket with uncheck Block all public access option to allow Public Access 
 2. Once Bucket is created, navigate to the Properties tab & Enable Static website hosting 
 3. Specify the default page of the website -`index.html` 
 4. Upload all the contents from the `dist` directory to the S3 Bucket
-5. Open the bucket website endpoint - `http://bucket-name.s3-website-region.amazonaws.com/`
-6. To configure a secure HTTPS connection, create a CloudFront distribution, configuring the domain from the S3 bucket, and other settings  
+5. Open the Bucket website endpoint - `http://bucket-name.s3-website-region.amazonaws.com/`
+
+### Deploy App in AWS S3 Bucket and access via AWS CloudFront
+1. Create an S3 Bucket with `Block all public access option`
+2. To configure a secure HTTPS connection, create a CloudFront distribution, configuring the domain from the S3 Bucket
+3. Select Origin access control(OAC) settings & create OAC to allow Bucket access for CloudFront
+4. Set `Redirect HTTP to HTTPS` & optional caching and domain settings
+5. Set the *root object* as `index.html`
+6. Copy & Paste the Policy of the OAC to S3 Bucket
+7. Open the CloudFront Website Endpoint - https://id.cloudfront.net/
 
 ### Deployment
 - AWS Deployment using [deploy.yml](.github/workflows/deploy.yml)

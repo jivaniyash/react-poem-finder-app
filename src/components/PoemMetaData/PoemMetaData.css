@@ -14,7 +14,7 @@
 .poem-meta-content {
   background: #fff3e0;
   color: #666;
-  padding: 1rem;
+  padding: 1rem 1rem 0rem 1rem;
   border-radius: 8px;
   min-width: 200px;
   position: relative;

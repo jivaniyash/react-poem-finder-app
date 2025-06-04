@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./PoemList.css";
 
 import PoemMetaData from "../PoemMetaData/PoemMetaData";
 import LanguageToggle from "../LanguageToggle/LanguageToggle";
-import highlightMatch from "./highlightMatch";
+import HighlightMatch from "../HighlightMatch/HighlightMatch";
 
 const PoemList = ({ poems, query, globalLang, langMap, setLangMap }) => {
   const [selectedPoem, setSelectedPoem] = useState(null);
   const verseEndings = [',', ';', ',', '.']
-  // const [langMap, setLangMap] = useState({}); /{ poemId: 'gu' | 'en' }/ 
 
   const handleToggle = (poemId) => {
     setLangMap((prev) => {
@@ -35,7 +34,7 @@ const PoemList = ({ poems, query, globalLang, langMap, setLangMap }) => {
             >
               {poem[`verses_${lang}`]?.map((line, i) => (
                 <div key={i} className="poem-line">
-                  {highlightMatch(line, query)}{verseEndings[i]}
+                  {HighlightMatch(line, query)}{verseEndings[i]}
                 </div>
               ))}
             </div>

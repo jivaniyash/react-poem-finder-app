@@ -23,13 +23,14 @@ function App() {
     (currentPage - 1) * poemsPerPage,
     currentPage * poemsPerPage
   );
+  
   const [globalLang, setGlobalLang] = useState('en');
   const [langMap, setLangMap] = useState({});
 
   const toggleGlobalLang = () => {
-  const nextLang = globalLang === 'en' ? 'gu' : 'en';
-  setGlobalLang(nextLang);
-  setLangMap({}); // reset all overrides
+    const nextLang = globalLang === 'en' ? 'gu' : 'en';
+    setGlobalLang(nextLang);
+    setLangMap({}); // reset all overrides
   };
 
 
@@ -39,7 +40,7 @@ function App() {
       <div className="description"> Search and explore Gujarati spiritual poems with English transliterations.</div>
 
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <LanguageToggle
+        <LanguageToggle
           language={globalLang}
           onToggle={toggleGlobalLang}
         />
