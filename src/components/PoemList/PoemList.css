@@ -1,0 +1,29 @@
+.poem {
+  background-color: #ffc695;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  transition: box-shadow 0.3s;
+  font-family: 'noto-serif-gujarati', sans-serif;
+  transition: transform 0.2s ease-in-out;
+}
+
+.poem-line {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  line-height: 1;
+  font-family: 'rasa';
+  color: blue;
+}
+
+.poem:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.poem-verses {
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

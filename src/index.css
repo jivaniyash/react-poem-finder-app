@@ -1,0 +1,50 @@
+.rasa {
+  font-family: "Rasa", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.noto-serif-gujarati {
+  font-family: "Noto Serif Gujarati", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #2c3e50;
+  font-family: sans-serif;
+  padding-top: 0%;
+  margin-top: 0;
+}
+
+.description {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 1%;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0.5rem auto;
+  padding: 1rem 1rem 1rem 1rem;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+.highlight {
+  background-color: rgb(0, 255, 136);
+  padding: 0 2px;
+  border-radius: 2px;
+}
