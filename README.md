@@ -86,7 +86,15 @@ Deploy App in AWS S3 Bucket
 6. To configure a secure HTTPS connection, create a CloudFront distribution, configuring the domain from the S3 bucket, and other settings  
 
 ### Deployment
-- AWS Deployment using [deploy.yml](.github/workflows/deploy.yml) 
+- AWS Deployment using [deploy.yml](.github/workflows/deploy.yml)
+1. Create Access keys & Access Token from IAM User Console
+2. Open GitHub Repository Settings -> Under Security -> secrets and variables -> Actions -> Repository secrets
+- Add `AWS_ACCESS_KEY_ID`
+- Add `AWS_SECRET_ACCESS_KEY`
+- Add `S3_BUCKET_NAME`
+- Add `CLOUDFRONT_DISTRIBUTION_ID` # if App is deployed to cloudfront for removing cache
+3. Change GitHub Repository `Code and automation` Settings -> Branches
+- Add a Branch protection rule to allow the deploy.yml file run when a new changes are pulled from a feature branch using Pull Requests.
 
 ## Steps for Fresh Start
 1. Run the following commands for a fresh start of the Project 
