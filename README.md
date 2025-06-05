@@ -1,7 +1,7 @@
 # React-Poem-Finder-App
 
 ### Quick Start
-```bash
+```sh
 git clone https://github.com/jivaniyash/react-poem-finder-app.git
 cd react-poem-finder-app
 npm install
@@ -26,14 +26,14 @@ Check Out [Project](https://dgmca1q0tkf1c.cloudfront.net) at CloudFront Link.
 
 ### Features
 1. *Overlays* - are used to show/hide the metadata of the poem
-2. *Search Bar* - to filter the Poems by title/content, sorted by Ascending Order & by title first (Searcable across EN & GU language)
+2. *Search Bar* - to filter the Poems by title/content, sorted by Ascending Order & by title first (Searchable across EN & GU language)
 3. *Pagination* - to change the display of poems in a single page & Page Navigation at the bottom of the Screen
 4. *Language* - toggle to change the default global language and poem-level toggle
-5. *Highlighter* - to show the query part in the poem   
+5. *Highlighter* - to show the query search in the poem
 
 ## Getting Started
 
-### Prerequisites 
+### Prerequisites
 
 - git
 - Node.js (18 or later)
@@ -44,41 +44,42 @@ Check Out [Project](https://dgmca1q0tkf1c.cloudfront.net) at CloudFront Link.
 ### Installation
 
 1. Clone the Repository
-
-    ```bash
+    ```sh
     git clone https://github.com/jivaniyash/react-poem-finder-app.git
     ```
 
 2. Navigate to the project directory:
-
-    ```bash
+    ```sh
     cd react-poem-finder-app
     ```
 
 3. Install dependencies
-    ```bash
+    ```sh
     npm install
     ```
 
 4. Test in Local Machine
-    ```bash
+    ```sh
     npm run dev
     ```
     This will start the App @ `http://localhost:5173`. You can remove the [configuration](vite.config.js) - `host: true` from the server parameter to disable access from other users on the same network 
 
 5. Build the App
-    ```bash
+    ```sh
     npm run build
     ```
     This will generate a new `dist` directory at the root level. 
 
 6. Preview Production Build Locally
-    ```bash
+    ```sh
     npm run preview
     ```
     This will start the App @ `http://localhost:4173`
 
 ## Usage
+
+![Architecture Diagram](demo/Architecture.png)
+
 There are 2 options to deploy the React App - either using S3 website endpoint or by Cloudfront by securing the connection.
 
 ### Deploy App in AWS S3 Bucket and access via S3 public link
@@ -110,11 +111,11 @@ There are 2 options to deploy the React App - either using S3 website endpoint o
 
 ## Steps for Fresh Start
 1. Run the following commands for a fresh start of the Project 
-```bash
-npm create vite@latest my-project -- --template react
-cd my-project                 
-npm install
-npm run dev
-```
+    ```sh
+    npm create vite@latest my-project -- --template react
+    cd my-project                 
+    npm install
+    npm run dev
+    ```
 
-2. Customize the directory and files to add/alter/remove the files for a particular use case 
+2. Customize the directory and files to add/alter/remove the files for a particular use case
