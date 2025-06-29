@@ -20,13 +20,13 @@ npm run dev
 
 ## Overview
 This Project is built using React + Vite Application. It helps users to find & search poems quickly by typing keywords in the search bar. 
-Check Out [Project](https://dgmca1q0tkf1c.cloudfront.net) at CloudFront Link.
+Check out [Project](https://dgmca1q0tkf1c.cloudfront.net) at CloudFront Link.
 
 ![Demo](demo/demo.gif)
 
 ### Features
 1. *Overlays* - are used to show/hide the metadata of the poem
-2. *Search Bar* - to filter the Poems by title/content, sorted by Ascending Order & by title first (Searchable across EN & GU language)
+2. *Search Bar* - to filter the Poems by title/content, sorted by Ascending Order & by title first (Searchable across EN & GU languages)
 3. *Pagination* - to change the display of poems in a single page & Page Navigation at the bottom of the Screen
 4. *Language* - toggle to change the default global language and poem-level toggle
 5. *Highlighter* - to show the query search in the poem
@@ -39,7 +39,7 @@ Check Out [Project](https://dgmca1q0tkf1c.cloudfront.net) at CloudFront Link.
 - Node.js (18 or later)
 - npm
 - Vite (`npm install -g vite`)
-- AWS Account (with sufficient permissions to create & add files to a S3 Bucket)
+- AWS Account (with sufficient permissions to create & add files to an S3 Bucket)
 
 ### Installation
 
@@ -58,7 +58,7 @@ Check Out [Project](https://dgmca1q0tkf1c.cloudfront.net) at CloudFront Link.
     npm install
     ```
 
-4. Test in Local Machine
+4. Test on Local Machine
     ```sh
     npm run dev
     ```
@@ -80,22 +80,22 @@ Check Out [Project](https://dgmca1q0tkf1c.cloudfront.net) at CloudFront Link.
 
 ![Architecture Diagram](demo/Architecture.png)
 
-There are 2 options to deploy the React App - either using S3 website endpoint or by Cloudfront by securing the connection.
+There are two options to deploy the React app: either using an S3 website endpoint or CloudFront, with the connection secured.
 
 ### Deploy App in AWS S3 Bucket and access via S3 public link
-1. Create an S3 Bucket with uncheck Block all public access option to allow Public Access 
+1. Create an S3 Bucket with the uncheck Block all public access option to allow Public Access 
 2. Once Bucket is created, navigate to the Properties tab & Enable Static website hosting 
 3. Specify the default page of the website -`index.html` 
 4. Upload all the contents from the `dist` directory to the S3 Bucket
 5. Open the Bucket website endpoint - `http://bucket-name.s3-website-region.amazonaws.com/`
 
 ### Deploy App in AWS S3 Bucket and access via AWS CloudFront
-1. Create an S3 Bucket with `Block all public access option`
+1. Create an S3 Bucket with the `Block all public access option`
 2. To configure a secure HTTPS connection, create a CloudFront distribution, configuring the domain from the S3 Bucket
 3. Select Origin access control(OAC) settings & create OAC to allow Bucket access for CloudFront
 4. Set `Redirect HTTP to HTTPS` & optional caching and domain settings
 5. Set the *root object* as `index.html`
-6. Copy & Paste the Policy of the OAC to S3 Bucket
+6. Copy & Paste the Policy of the OAC to the S3 Bucket
 7. Open the CloudFront Website Endpoint - https://id.cloudfront.net/
 
 ### Deployment
@@ -105,9 +105,9 @@ There are 2 options to deploy the React App - either using S3 website endpoint o
 - Add `AWS_ACCESS_KEY_ID`
 - Add `AWS_SECRET_ACCESS_KEY`
 - Add `S3_BUCKET_NAME`
-- Add `CLOUDFRONT_DISTRIBUTION_ID` # if App is deployed to cloudfront for removing cache
-3. Change GitHub Repository `Code and automation` Settings -> Branches
-- Add a Branch protection rule to allow the deploy.yml file run when a new changes are pulled from a feature branch using Pull Requests.
+- Add `CLOUDFRONT_DISTRIBUTION_ID` # if App is deployed to CloudFront for removing cache
+3. Change GitHub Repository's `Code and automation` Settings -> Branches
+- Add a Branch protection rule to allow the deploy.yml file to run when new changes are pulled from a feature branch using Pull Requests.
 
 ## Steps for Fresh Start
 1. Run the following commands for a fresh start of the Project 
