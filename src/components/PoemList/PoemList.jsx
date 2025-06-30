@@ -32,11 +32,25 @@ const PoemList = ({ poems, query, globalLang, langMap, setLangMap }) => {
               onClick={() => setSelectedPoem(poem)}
               style={{ cursor: "pointer" }}
             >
-              {poem[`verses_${lang}`]?.map((line, i) => (
-                <div key={i} className="poem-line">
-                  {HighlightMatch(line, query)}{verseEndings[i]}
-                </div>
-              ))}
+              {Array.from({ length: Math.ceil(poem[`verses_${lang}`]?.length / 2) }).map((_, rowIndex) => {
+                const verse1 = poem[`verses_${lang}`][rowIndex * 2];
+                const verse2 = poem[`verses_${lang}`][rowIndex * 2 + 1];
+
+                return (
+                  <div key={rowIndex} className="poem-line-row">
+                    {verse1 && (
+                      <div className="poem-line">
+                        {HighlightMatch(verse1, query)}{verseEndings[rowIndex * 2]}
+                      </div>
+                    )}
+                    {verse2 && (
+                      <div className="poem-line">
+                        {HighlightMatch(verse2, query)}{verseEndings[rowIndex * 2 + 1]}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>

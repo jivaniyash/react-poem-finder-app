@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { poems } from "./data";
 import SearchInput from "./components/SearchInput/SearchInput";
@@ -6,7 +6,7 @@ import PoemList from "./components/PoemList/PoemList";
 import Pagination from "./components/Pagination/Pagination";
 import PoemCount from "./components/PoemCount/PoemCount";
 import LanguageToggle from "./components/LanguageToggle/LanguageToggle";
-import { filterPoems } from "./utils/filterPoems";
+import { initializeSearch, searchPoems } from "./utils/filterPoems";
 
 import "./index.css";
 
@@ -14,8 +14,21 @@ function App() {
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [poemsPerPage, setPoemsPerPage] = useState(5);
+  const [filteredPoems, setFilteredPoems] = useState(poems);
+  const [globalLang, setGlobalLang] = useState("en");
+  const [langMap, setLangMap] = useState({});
 
-  const filteredPoems = filterPoems(poems, query);
+  useEffect(() => {
+    initializeSearch(poems);
+    setFilteredPoems(poems);
+  }, []);
+
+  useEffect(() => {
+    const result = searchPoems(query);
+    setFilteredPoems(result);
+    setCurrentPage(1);
+  }, [query]);
+
   const totalPoems = filteredPoems.length;
   const totalPages = Math.ceil(totalPoems / poemsPerPage);
 
@@ -23,9 +36,6 @@ function App() {
     (currentPage - 1) * poemsPerPage,
     currentPage * poemsPerPage
   );
-  
-  const [globalLang, setGlobalLang] = useState('en');
-  const [langMap, setLangMap] = useState({});
 
   const toggleGlobalLang = () => {
     const nextLang = globalLang === 'en' ? 'gu' : 'en';

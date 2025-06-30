@@ -16,7 +16,7 @@ export const poems = [
       'Satsangi sav che harina j ang',
       'Te shu ruthe te harine j sang',
       'Jo and eke harinu dukhay',
-      'To dukh te shreeharine j ay'
+      'To dukh te shreeharine j thay'
     ]
   },
   {
